@@ -16,9 +16,24 @@ print(mon_df.loc[mon_df['Produit'] == 'Laitue'])
 
 data_client = {
     "Produit": ['Pomme', 'Fraise', 'Carotte'],
-    "Stock": [2, 5, 3],
-    "Prix Quantité": [0.8*2, 3.5*2, 1*3]
+    "Stock": [2, 5, 3]
 }
+
+# data_client["Prix Quantité"] = [
+    # data["Prix unitaire"][0] * data_client["Stock"][0],
+    # data["Prix unitaire"][1] * data_client["Stock"][1],
+    # data["Prix unitaire"][3] * data_client["Stock"][2]
+# ]
+
+
+
+data_client["Prix Quantité"] = [
+    data["Prix unitaire"][data["Produit"].index(produit)] * quantite
+    for produit, quantite in zip(data_client["Produit"], data_client["Stock"])
+]
+
+
+
 
 ticket_df = pandas.DataFrame(data_client)
 
@@ -32,4 +47,4 @@ print("\nStock mis à jour après achat :")
 print(copi_stock_df)
 
 #Enregistrer le dataframe dans un fichier CSV
-ticket_df.to_csv('liste_course.csv', index=False)
+mon_df.to_csv('liste_course.csv', index=False)
