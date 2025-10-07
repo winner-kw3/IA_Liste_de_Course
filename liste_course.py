@@ -8,4 +8,8 @@ data = {
 
 mon_df = pandas.DataFrame(data)
 
+# Le gérant souhaite consulter la liste des produits.
 print(mon_df)
+
+# Le gérant souhaite consulter les informations sur la laitue.
+print(mon_df.loc[mon_df['Produit'] == 'Laitue'])
