@@ -32,4 +32,4 @@ print("\nStock mis à jour après achat :")
 print(copi_stock_df)
 
 #Enregistrer le dataframe dans un fichier CSV
-mon_df.to_csv('liste_course.csv', index=False)
+ticket_df.to_csv('liste_course.csv', index=False)
