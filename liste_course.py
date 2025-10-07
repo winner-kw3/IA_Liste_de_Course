@@ -13,3 +13,6 @@ print(mon_df)
 
 # Le gérant souhaite consulter les informations sur la laitue.
 print(mon_df.loc[mon_df['Produit'] == 'Laitue'])
+
+#Enregistrer le dataframe dans un fichier CSV
+mon_df.to_csv('liste_course.csv', index=False)
